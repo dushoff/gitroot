@@ -21,28 +21,35 @@ Makefile: $(ms)
 $(ms):
 	git submodule add -b master https://github.com/dushoff/$@.git
 
-$(ms)/%.mk: $(ms)/Makefile ;
-
-$(ms)/Makefile:
-	git submodule init $(ms) 
-	git submodule update $(ms) 
-	touch $@
-
 ######################################################################
 
-clone:
+## Should clones start with makestuff.sub or makestuff.clone?
+clonecommand = subclone
+clonecommand = cloneclone
+clone: $(clonecommand)
+
+setclone:
 	git clone $(repo)$(user)/$(target).git
 	$(MAKE) $(target)/Makefile
 	$(MAKE) $(target)/target.mk
-	cd  $(target) && $(MAKE) push
+	cd  $(target) && $(MAKE) Makefile
+
+subclone:
+	$(MAKE) setclone
+	cd  $(target) && $(MAKE) makestuff.sub
+	make $(target).push
+
+cloneclone:
+	$(MAKE) setclone
+	make $(target).push
 
 ### Remember to change the Source/Ignore
+### A perl script could do this for you!
 %.sub: %
 	cd $* && $(MAKE) makestuff.sub
 
 %.clone: %
 	cd $* && $(MAKE) makestuff.clone
-
 
 Sources += start.mk
 %/Makefile:
@@ -54,11 +61,11 @@ Sources += start.mk
 
 ### development
 
-Ignore += $(dushoff_repos)
+Ignore += $(dushoff_github)
 creation:
 recreation:
-	cd creation && git clean -fd && git clean -fX
-	git rm -rf * && git push -u origin
+	cd creation && git clean -f -fd
+	cd creation && git rm -rf Makefile *.* && git push -u origin
 	-$(RMR) creation
 	$(MAKE) creation
 

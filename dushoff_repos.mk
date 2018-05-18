@@ -1,13 +1,15 @@
 
 ## See makestuff/repos.def ## makestuff/repos.mk
 
-###################
+######################################################################
+
 ## dushoff_github
 
 ## This is meant to be actually destroyed!!
 dushoff_github += creation
 
 ## Not sure how to use this one
+Sandbox: clonecommand=subclone
 dushoff_github += Sandbox
 
 $(dushoff_github):
