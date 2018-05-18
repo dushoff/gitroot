@@ -54,6 +54,7 @@ Sources += start.mk
 
 ### development
 
+Ignore += $(dushoff_repos)
 creation:
 recreation:
 	cd creation && git clean -fd && git clean -fX
