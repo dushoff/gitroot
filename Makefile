@@ -30,7 +30,42 @@ $(ms)/Makefile:
 
 ######################################################################
 
+clone:
+	git clone $(repo)$(user)/$(target).git
+	$(MAKE) $(target)/Makefile
+	$(MAKE) $(target)/target.mk
+	cd  $(target) && $(MAKE) push
+
+### Remember to change the Source/Ignore
+%.sub: %
+	cd $* && $(MAKE) makestuff.sub
+
+%.clone: %
+	cd $* && $(MAKE) makestuff.clone
+
+
+Sources += start.mk
+%/Makefile:
+	echo "# $*" > $@
+	cat start.mk >> $@
+	cd $* && $(MAKE) Makefile
+
+######################################################################
+
+### development
+
+creation:
+recreation:
+	-$(RMR) creation
+	$(MAKE) creation
+
+######################################################################
+
 ### Makestuff
+
+Sources += sites.mk dushoff_repos.mk
+-include sites.mk
+-include dushoff_repos.mk
 
 -include $(ms)/git.mk
 -include $(ms)/visual.mk
