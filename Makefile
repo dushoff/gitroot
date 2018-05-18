@@ -56,6 +56,8 @@ Sources += start.mk
 
 creation:
 recreation:
+	cd creation && git clean -fd && git clean -fX
+	git rm -rf * && git push -u origin
 	-$(RMR) creation
 	$(MAKE) creation
 
