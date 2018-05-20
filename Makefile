@@ -17,9 +17,14 @@ Ignore += local.mk
 -include $(ms)/os.mk
 
 Sources += $(ms)
-Makefile: $(ms)
+Makefile: $(ms)/Makefile
 $(ms):
 	git submodule add -b master https://github.com/dushoff/$@.git
+
+## Only meant to work with makestuff.sub
+$(ms)/%.mk: $(ms)/Makefile ;
+$(ms)/Makefile: $(ms)
+	git submodule update -i
 
 ######################################################################
 
@@ -34,14 +39,13 @@ setclone:
 	$(MAKE) $(target)/target.mk
 	cd  $(target) && $(MAKE) Makefile
 
+## No longer pushing automatically, because what about other peoples' repos
 subclone:
 	$(MAKE) setclone
 	cd  $(target) && $(MAKE) makestuff.sub
-	make $(target).push
 
 cloneclone:
 	$(MAKE) setclone
-	make $(target).push
 
 ### Remember to change the Source/Ignore
 ### A perl script could do this for you!
@@ -76,6 +80,7 @@ recreation:
 Sources += sites.mk dushoff_repos.mk
 -include sites.mk
 -include dushoff_repos.mk
+-include friends.mk
 
 -include $(ms)/git.mk
 -include $(ms)/visual.mk
