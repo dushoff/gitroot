@@ -17,13 +17,13 @@ Ignore += local.mk
 -include $(ms)/os.mk
 
 Sources += $(ms)
-Makefile: $(ms)/Makefile
+Makefile: $(ms) $(ms)/Makefile
 $(ms):
 	git submodule add -b master https://github.com/dushoff/$@.git
 
 ## Only meant to work with makestuff.sub
 $(ms)/%.mk: $(ms)/Makefile ;
-$(ms)/Makefile: $(ms)
+$(ms)/Makefile: 
 	git submodule update -i
 
 ######################################################################
@@ -73,11 +73,13 @@ recreation:
 	-$(RMR) creation
 	$(MAKE) creation
 
+competenceFramework:
+
 ######################################################################
 
 ### Makestuff
 
-Sources += sites.mk dushoff_repos.mk
+Sources += sites.mk dushoff_repos.mk friends.mk
 -include sites.mk
 -include dushoff_repos.mk
 -include friends.mk
