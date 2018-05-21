@@ -21,7 +21,6 @@ Makefile: $(ms) $(ms)/Makefile
 $(ms):
 	git submodule add -b master https://github.com/dushoff/$@.git
 
-## Only meant to work with makestuff.sub
 $(ms)/%.mk: $(ms)/Makefile ;
 $(ms)/Makefile: 
 	git submodule update -i
@@ -73,6 +72,7 @@ recreation:
 	-$(RMR) creation
 	$(MAKE) creation
 
+clonedirs += competenceFramework
 competenceFramework:
 
 ######################################################################
