@@ -72,9 +72,6 @@ recreation:
 	-$(RMR) creation
 	$(MAKE) creation
 
-clonedirs += competenceFramework
-competenceFramework:
-
 ######################################################################
 
 ### Makestuff
