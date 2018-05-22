@@ -8,7 +8,7 @@ PulliamLab += competenceFramework
 $(PulliamLab):
 	$(MAKE) target=$@ repo=$(github) user=PulliamLab-UFL clone
 
-Ignore += $(PulliamLab)
+repodirs += $(PulliamLab)
 
 ######################################################################
 
@@ -23,7 +23,7 @@ ICI3D += MMED MMEDparticipants
 $(ICI3D):
 	$(MAKE) target=$@ repo=$(github) user=ICI3D clone
 
-Ignore += $(ICI3D)
+repodirs += $(ICI3D)
 
 ######################################################################
 
@@ -35,4 +35,4 @@ davidearn += mbfuture
 $(davidearn):
 	$(MAKE) target=$@ repo=$(github) user=davidearn clone
 
-Ignore += $(davidearn)
+repodirs += $(davidearn)

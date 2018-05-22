@@ -7,9 +7,6 @@ current: target
 ##################################################################
 
 # Content
-clonedirs += competenceFramework/ MMED/ MMEDparticipants/
-clonedirs += mbfuture
-anomalousdirs += mbfuture
 
 ######################################################################
 
