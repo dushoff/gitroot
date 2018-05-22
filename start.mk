@@ -9,7 +9,8 @@ current: target
 
 # stuff
 
-Sources += Makefile .ignore .gitignore
+Sources += Makefile .ignore 
+Ignore += .gitignore
 
 msrepo = https://github.com/dushoff
 ms = makestuff
@@ -19,12 +20,16 @@ Ignore += local.mk
 
 # -include $(ms)/perl.def
 
-### Untracked simple version of makestuff is the default
 Ignore += $(ms)
 ## Sources += $(ms)
-Makefile: $(ms)
+Makefile: $(ms) $(ms)/Makefile
 $(ms):
 	git clone $(msrepo)/$(ms)
+
+## Only meant to work with makestuff.sub
+$(ms)/%.mk: $(ms)/Makefile ;
+$(ms)/Makefile:
+	git submodule update -i
 
 ######################################################################
 

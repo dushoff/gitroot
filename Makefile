@@ -6,6 +6,13 @@ current: target
 
 ##################################################################
 
+# Content
+clonedirs += competenceFramework/ MMED/ MMEDparticipants/
+clonedirs += mbfuture
+anomalousdirs += mbfuture
+
+######################################################################
+
 # stuff
 
 Sources += Makefile .ignore
@@ -17,9 +24,13 @@ Ignore += local.mk
 -include $(ms)/os.mk
 
 Sources += $(ms)
-Makefile: $(ms)
+Makefile: $(ms) $(ms)/Makefile
 $(ms):
 	git submodule add -b master https://github.com/dushoff/$@.git
+
+$(ms)/%.mk: $(ms)/Makefile ;
+$(ms)/Makefile: 
+	git submodule update -i
 
 ######################################################################
 
@@ -34,14 +45,13 @@ setclone:
 	$(MAKE) $(target)/target.mk
 	cd  $(target) && $(MAKE) Makefile
 
+## No longer pushing automatically, because what about other peoples' repos
 subclone:
 	$(MAKE) setclone
 	cd  $(target) && $(MAKE) makestuff.sub
-	make $(target).push
 
 cloneclone:
 	$(MAKE) setclone
-	make $(target).push
 
 ### Remember to change the Source/Ignore
 ### A perl script could do this for you!
@@ -81,9 +91,10 @@ clonedirs +=  $(wildcard $(repodirs))
 
 ### Makestuff
 
-Sources += sites.mk dushoff_repos.mk
+Sources += sites.mk dushoff_repos.mk friends.mk
 -include sites.mk
 -include dushoff_repos.mk
+-include friends.mk
 
 -include $(ms)/git.mk
 -include $(ms)/visual.mk
