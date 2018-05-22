@@ -6,6 +6,11 @@ current: target
 
 ##################################################################
 
+# Content
+clonedirs += competenceFramework/ MMED/ MMEDparticipants/
+
+######################################################################
+
 # stuff
 
 Sources += Makefile .ignore

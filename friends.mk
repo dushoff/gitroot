@@ -24,3 +24,15 @@ $(ICI3D):
 	$(MAKE) target=$@ repo=$(github) user=ICI3D clone
 
 Ignore += $(ICI3D)
+
+######################################################################
+
+## David Earn
+## https://github.com/davidearn/mbfuture.git
+
+davidearn += mbfuture
+
+$(davidearn):
+	$(MAKE) target=$@ repo=$(github) user=davidearn clone
+
+Ignore += $(davidearn)
