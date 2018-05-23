@@ -36,3 +36,18 @@ $(davidearn):
 	$(MAKE) target=$@ repo=$(github) user=davidearn clone
 
 repodirs += $(davidearn)
+
+######################################################################
+
+## Chyun
+## https://github.com/fishforwish/fgc
+
+fishforwish += fgc
+
+$(fishforwish):
+	$(MAKE) target=$@ repo=$(github) user=fishforwish clone
+
+repodirs += $(fishforwish)
+
+######################################################################
+
