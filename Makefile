@@ -64,6 +64,8 @@ Sources += start.mk
 	cat start.mk >> $@
 	cd $* && $(MAKE) Makefile
 
+Sources += clone.mk sub.mk
+
 ######################################################################
 
 ### development
