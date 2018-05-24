@@ -88,10 +88,9 @@ clonedirs +=  $(wildcard $(repodirs))
 
 ### Makestuff
 
-Sources += sites.mk dushoff_repos.mk friends.mk
--include sites.mk
--include dushoff_repos.mk
--include friends.mk
+-include $(ms)/repos/sites.mk
+-include $(ms)/repos/dushoff_repos.mk
+-include $(ms)/repos/friends.mk
 
 -include $(ms)/git.mk
 -include $(ms)/visual.mk
