@@ -31,6 +31,16 @@ $(ms)/Makefile:
 
 ######################################################################
 
+## Repo lists
+## Work on refactoring (there should be code to sub, and the lists should be cleaner)
+
+Ignore += dushoff_repos.mk friends.mk sites.mk
+Makefile: dushoff_repos.mk friends.mk sites.mk
+dushoff_repos.mk friends.mk sites.mk:
+	$(LNF) makestuff/repos/$@ .
+
+######################################################################
+
 ## Should clones start with makestuff.sub or makestuff.clone?
 clonecommand = subclone
 clonecommand = cloneclone
