@@ -14,9 +14,9 @@ Ignore += $(ms)
 ## Sources += $(ms)
 Makefile: $(ms) $(ms)/Makefile
 $(ms):
-	git submodule -b master $(msrepo)/$(ms)
+	git submodule add -b master $(msrepo)/$(ms)
 
 ## Only meant to work with makestuff.sub
-$(ms)/%.mk: $(ms)/Makefile ;
+$(ms)/%.mk: $(ms) $(ms)/Makefile ;
 $(ms)/Makefile:
 	git submodule update -i
