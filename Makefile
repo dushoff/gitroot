@@ -84,13 +84,13 @@ recreation:
 	-$(RMR) creation
 	$(MAKE) creation
 
-now:
-	@echo $(wildcard $(dushoff_github))
-
 ######################################################################
 
 Ignore += $(repodirs)
 clonedirs +=  $(wildcard $(repodirs))
+
+now:
+	@echo $(clonedirs)
 
 ######################################################################
 
