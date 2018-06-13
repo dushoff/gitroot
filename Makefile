@@ -43,22 +43,18 @@ dushoff_repos.mk friends.mk sites.mk:
 
 ## Should clones start with makestuff.sub or makestuff.clone?
 clonecommand = subclone
-clonecommand = cloneclone
+clonecommand = justclone
 clone: $(clonecommand)
 
-setclone:
+######################################################################
+
+justclone:
 	git clone $(repo)$(user)/$(target).git
-	$(MAKE) $(target)/Makefile
-	$(MAKE) $(target)/target.mk
-	cd  $(target) && $(MAKE) Makefile
 
-## No longer pushing automatically, because what about other peoples' repos
-subclone:
-	$(MAKE) setclone
-	cd  $(target) && $(MAKE) makestuff.sub
-
-cloneclone:
-	$(MAKE) setclone
+%.setup:
+	$(MAKE) $*
+	$(MAKE) $*/Makefile
+	$(MAKE) $*/target.mk
 
 ### Remember to change the Source/Ignore
 ### A perl script could do this for you!
