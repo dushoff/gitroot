@@ -92,6 +92,9 @@ now:
 Ignore += $(repodirs)
 clonedirs +=  $(wildcard $(repodirs))
 
+clonelist:
+	@echo $(clonedirs)
+
 ######################################################################
 
 ### Makestuff
