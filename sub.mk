@@ -10,8 +10,7 @@ Ignore += local.mk
 
 # -include $(ms)/perl.def
 
-Ignore += $(ms)
-## Sources += $(ms)
+Sources += $(ms)
 Makefile: $(ms) $(ms)/Makefile
 $(ms):
 	git submodule add -b master $(msrepo)/$(ms)
