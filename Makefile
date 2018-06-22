@@ -77,7 +77,6 @@ Sources += clone.mk sub.mk
 
 ### development
 
-Ignore += $(dushoff_github)
 creation:
 recreation:
 	cd creation && git clean -f -fd
