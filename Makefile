@@ -35,9 +35,11 @@ $(ms)/Makefile:
 ## Work on refactoring (there should be code to sub, and the lists should be cleaner)
 
 ## These are links because we like editing them here, but want to save to makestuff
-Ignore += dushoff_repos.mk friends.mk sites.mk
-Makefile: dushoff_repos.mk friends.mk sites.mk
-dushoff_repos.mk friends.mk sites.mk:
+repolinks += dushoff_repos.mk friends.mk sites.mk
+repolinks += dushoff_repos.def friends.def
+Ignore += $(repolinks)
+Makefile: $(repolinks)
+$(repolinks):
 	$(LNF) makestuff/repos/$@ .
 
 ######################################################################
