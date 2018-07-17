@@ -42,6 +42,9 @@ Makefile: $(repolinks)
 $(repolinks):
 	$(LNF) makestuff/repos/$@ .
 
+## Repos that aren't ready for all.time yet
+Ignore += dev
+
 ######################################################################
 
 ## Should clones start with makestuff.sub or makestuff.clone?
