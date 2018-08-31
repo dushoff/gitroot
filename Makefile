@@ -1,4 +1,4 @@
-# gitroot!
+# gitroot
 ### Hooks for the editor to set the default target
 
 current: target
@@ -48,6 +48,8 @@ Ignore += dev
 ######################################################################
 
 ## Should clones start with makestuff.sub or makestuff.clone?
+## This is terrible; should move to git.mk as clone: and module:
+## or as clone= and module=
 clonecommand = subclone
 clonecommand = justclone
 clone: $(clonecommand)
