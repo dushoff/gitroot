@@ -56,6 +56,12 @@ clone: $(clonecommand)
 
 ######################################################################
 
+## things with special names
+labPages:
+	git clone https://github.com/mac-theobio/mac-theobio.github.io.git $@
+
+######################################################################
+
 justclone:
 	git clone $(repo)$(user)/$(target).git
 
