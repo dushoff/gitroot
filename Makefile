@@ -64,6 +64,11 @@ justclone:
 	$(MAKE) $*/Makefile
 	$(MAKE) $*/target.mk
 
+### This seems stupid; why would I put all of this stuff in the 
+### new Makefile and then decide?
+### Also: I don't seem to actually do that
+
+### OLDER
 ### Remember to change the Source/Ignore
 ### A perl script could do this for you!
 %.sub: %
@@ -77,6 +82,7 @@ Sources += start.mk
 	echo "# $*" > $@
 	cat start.mk >> $@
 	cd $* && $(MAKE) Makefile
+
 
 Sources += clone.mk sub.mk
 
