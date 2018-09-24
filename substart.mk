@@ -20,11 +20,15 @@ Ignore += local.mk
 
 # -include $(ms)/perl.def
 
-Ignore += $(ms)
-## Sources += $(ms)
+## makestuff as submodule
+Sources += $(ms)
 Makefile: $(ms) $(ms)/Makefile
 $(ms):
-	git clone $(msrepo)/$(ms)
+	git submodule add -f -b master https://github.com/dushoff/makestuff
+
+$(ms)/%.mk: $(ms)/Makefile ;
+$(ms)/Makefile:
+	git submodule update -i
 
 ######################################################################
 

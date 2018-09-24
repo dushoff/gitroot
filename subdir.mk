@@ -20,11 +20,11 @@ Ignore += local.mk
 
 # -include $(ms)/perl.def
 
-Ignore += $(ms)
-## Sources += $(ms)
+## makestuff as uplink
+Sources += $(ms)
 Makefile: $(ms) $(ms)/Makefile
-$(ms):
-	git clone $(msrepo)/$(ms)
+$(ms): ../makestuff
+	/bin/ln -fs $< $@
 
 ######################################################################
 

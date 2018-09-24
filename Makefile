@@ -83,7 +83,7 @@ justclone:
 %.clone: %
 	cd $* && $(MAKE) makestuff.clone
 
-Sources += start.mk
+Sources += start.mk substart.mk subdir.mk
 %/Makefile:
 	echo "# $*" > $@
 	cat start.mk >> $@
