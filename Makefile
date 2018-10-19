@@ -65,6 +65,7 @@ labPages:
 justclone:
 	git clone $(repo)$(user)/$(target).git
 
+# networkSEIR.setup
 %.setup:
 	$(MAKE) $*
 	$(MAKE) $*/Makefile
