@@ -6,13 +6,9 @@ current: target
 
 ##################################################################
 
-# Content
-
-######################################################################
-
 # stuff
 
-Sources += Makefile .ignore
+Sources += Makefile
 
 msrepo = https://github.com/dushoff
 ms = makestuff
@@ -47,12 +43,14 @@ Ignore += dev
 
 ######################################################################
 
+## Developing now in talks/
+## Should have clonedirs use justclone, and mdirs (bad name?) use subclone (bad name, and does not exist) … investigate
+
+## No idea what this is or whether I am using it.
 ## Should clones start with makestuff.sub or makestuff.clone?
 ## This is terrible; should move to git.mk as clone: and module:
 ## or as clone= and module=
-clonecommand = subclone
 clonecommand = justclone
-clone: $(clonecommand)
 
 ######################################################################
 
@@ -62,33 +60,25 @@ labPages:
 
 ######################################################################
 
-justclone:
-	git clone $(repo)$(user)/$(target).git
-
+## Current setup makes something with a cloned makestuff (already)
+## Good for containers, etc. 
+# talks.setup
 %.setup:
 	$(MAKE) $*
 	$(MAKE) $*/Makefile
 	$(MAKE) $*/target.mk
 
-### This seems stupid; why would I put all of this stuff in the 
-### new Makefile and then decide?
-### Also: I don't seem to actually do that
-
-### OLDER
-### Remember to change the Source/Ignore
-### A perl script could do this for you!
+## This is meant to override the clone setup
 %.sub: %
 	cd $* && $(MAKE) makestuff.sub
 
-%.clone: %
-	cd $* && $(MAKE) makestuff.clone
-
-Sources += start.mk substart.mk subdir.mk
+## start.mk is what we're using. Other startmks deleted 2018 Oct 25 (Thu)
+## git rm substart.mk subdir.mk ##
+Sources += start.mk
 %/Makefile:
 	echo "# $*" > $@
 	cat start.mk >> $@
 	cd $* && $(MAKE) Makefile
-
 
 Sources += clone.mk sub.mk
 

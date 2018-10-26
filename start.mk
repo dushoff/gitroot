@@ -9,12 +9,7 @@ current: target
 
 # stuff
 
-Sources += Makefile .ignore 
-Ignore += .gitignore
-
--include $(ms)/os.mk
-
-# -include $(ms)/perl.def
+Sources += Makefile
 
 msrepo = https://github.com/dushoff
 ms = makestuff
@@ -22,6 +17,13 @@ Ignore += $(ms)
 Makefile: $(ms) $(ms)/Makefile
 $(ms):
 	git clone $(msrepo)/$(ms)
+
+-include $(ms)/os.mk
+# -include $(ms)/perl.def
+
+######################################################################
+
+## Content
 
 ######################################################################
 
