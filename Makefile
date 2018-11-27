@@ -55,6 +55,7 @@ clonecommand = justclone
 ######################################################################
 
 ## things with special names
+repodirs += labPages
 labPages:
 	git clone https://github.com/mac-theobio/mac-theobio.github.io.git $@
 
