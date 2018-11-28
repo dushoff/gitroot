@@ -6,6 +6,19 @@ current: target
 
 ##################################################################
 
+# screen
+
+screen_session: Planning.screen 
+
+Planning.screen: Planning
+	- cd $< && $(MAKE) sync
+	cd $< && screen -t "$<" bash -cl "nvim" ##
+
+%.screen: %
+	cd $< && screen -t "$<" bash -cl "vmt" ##
+
+######################################################################
+
 # stuff
 
 Sources += Makefile
