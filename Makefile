@@ -6,6 +6,19 @@ current: target
 
 ##################################################################
 
+# screen
+
+screen_session: Planning.screen 
+
+Planning.screen: Planning
+	- cd $< && $(MAKE) sync
+	cd $< && screen -t "$<" bash -cl "nvim" ##
+
+%.screen: %
+	cd $< && screen -t "$<" bash -cl "vmt" ##
+
+######################################################################
+
 # stuff
 
 Sources += Makefile
@@ -55,6 +68,7 @@ clonecommand = justclone
 ######################################################################
 
 ## things with special names
+repodirs += labPages
 labPages:
 	git clone https://github.com/mac-theobio/mac-theobio.github.io.git $@
 
