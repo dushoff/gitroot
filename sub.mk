@@ -1,6 +1,4 @@
-
-Sources += Makefile .ignore 
-Ignore += .gitignore
+Sources += Makefile
 
 msrepo = https://github.com/dushoff
 ms = makestuff
