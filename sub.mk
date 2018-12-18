@@ -1,10 +1,19 @@
+<<<<<<< HEAD
+### Hooks for the editor to set the default target
+
+current: target
+-include target.mk
+
+##################################################################
+
+## Defs
+
+=======
+>>>>>>> a6763ab8f0c1196cc7fa9a0a17a16eab268a4005
 Sources += Makefile
 
 msrepo = https://github.com/dushoff
 ms = makestuff
--include $(ms)/os.mk
-
-# -include $(ms)/perl.def
 
 Sources += $(ms)
 Makefile: $(ms) $(ms)/Makefile
@@ -14,3 +23,20 @@ $(ms):
 $(ms)/%.mk: $(ms) $(ms)/Makefile ;
 $(ms)/Makefile:
 	git submodule update -i
+
+-include $(ms)/os.mk
+# -include $(ms)/perl.def
+
+######################################################################
+
+## Content
+
+######################################################################
+
+### Makestuff
+
+-include $(ms)/git.mk
+-include $(ms)/visual.mk
+
+# -include $(ms)/wrapR.mk
+
