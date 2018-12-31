@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ### Hooks for the editor to set the default target
 
 current: target
@@ -8,8 +7,6 @@ current: target
 
 ## Defs
 
-=======
->>>>>>> a6763ab8f0c1196cc7fa9a0a17a16eab268a4005
 Sources += Makefile
 
 msrepo = https://github.com/dushoff
