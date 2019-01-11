@@ -8,7 +8,7 @@ current: target
 
 # screen
 
-screen_session: Planning.screen 
+screen_session: Planning.screen Lab_meeting.screen
 
 Planning.screen: Planning
 	- cd $< && $(MAKE) sync
