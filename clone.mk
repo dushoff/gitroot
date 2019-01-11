@@ -1,16 +1,25 @@
+## Target
+current: target
+-include target.mk
 
-Sources += Makefile .ignore 
-Ignore += .gitignore
-
+## Makestuff setup
+Sources += Makefile 
 msrepo = https://github.com/dushoff
 ms = makestuff
-Ignore += local.mk
--include local.mk
 -include $(ms)/os.mk
 
-# -include $(ms)/perl.def
-
 Ignore += $(ms)
-Makefile: $(ms) $(ms)/Makefile
-$(ms):
+Makefile: $(ms)/Makefile
+$(ms)/Makefile:
 	git clone $(msrepo)/$(ms)
+	ls $@
+
+######################################################################
+
+######################################################################
+
+### Makestuff rules
+
+-include $(ms)/git.mk
+-include $(ms)/visual.mk
+
