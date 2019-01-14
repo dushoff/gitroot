@@ -8,7 +8,7 @@ current: target
 
 # screen
 
-screen_session: Planning.screen Lab_meeting.screen notebook.screen
+screen_session: Planning.screen Lab_meeting.screen notebook.screen linux_config.screen
 
 Planning.screen: Planning
 	- cd $< && $(MAKE) sync
