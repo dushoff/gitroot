@@ -94,7 +94,8 @@ Sources += start.mk
 	cat start.mk >> $@
 	cd $* && $(MAKE) Makefile
 
-Sources += clone.mk sub.mk
+## Makefiles for repos?
+Sources += clone.mk sub.mk up.mk
 
 ######################################################################
 
