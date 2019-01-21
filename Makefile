@@ -6,7 +6,7 @@ current: target
 
 ##################################################################
 
-# screen
+# default (gitroot) screen
 
 screen_session: Planning.screen Lab_meeting.screen notebook.screen linux_config.screen
 
@@ -18,6 +18,16 @@ Planning.screen: Planning
 	cd $< && screen -t "$<" bash -cl "vmt" ##
 
 ######################################################################
+
+# other screens
+
+chyun.screens: mc_recency.sd
+	cd fgc && screen -t fgc
+
+project.screens: plague.sd
+
+%.sd:
+	cd $* && screen -t $*
 
 # stuff
 
