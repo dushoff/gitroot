@@ -26,6 +26,10 @@ chyun.screens: mc_recency.sd
 
 project.screens: plague.sd
 
+mli.screens: rabies_cihr.sd rabies_R0.sd
+
+park.screens: contact_trace.sd bayes_antigen.sd generation_links.sd
+
 %.sd:
 	cd $* && screen -t $*
 
