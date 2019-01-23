@@ -9,7 +9,6 @@ current: target
 Sources += Makefile
 
 ms = makestuff
-
 Ignore += $(ms)
 Makefile: $(ms)/Makefile
 	touch $@
