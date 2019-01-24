@@ -21,16 +21,18 @@ Planning.screen: Planning
 
 # other screens
 
-chyun.screens: mc_recency.sd
+chyun.screens: mc_recency.vscreen
 	cd fgc && screen -t fgc
 
-project.screens: plague.sd
+project.screens: plague.vscreen significance.vscreen
 
-admin.screens: coreFaculty.sd
+admin.screens: coreFaculty.vscreen Correspondence.vscreen
 
-mli.screens: rabies_cihr.sd rabies_R0.sd
+mli.screens: rabies_cihr.vscreen rabies_R0.vscreen
 
-park.screens: contact_trace.sd bayes_antigen.sd generation_links.sd
+park.screens: contact_trace.sd bayes_antigen.vscreen generation_links.vscreen
+
+cygu.screens: WDBC-Codes.vscreen aphrc.vscreen
 
 %.sd:
 	cd $* && screen -t $*
