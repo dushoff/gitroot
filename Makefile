@@ -26,7 +26,7 @@ chyun.screens: mc_recency.vscreen
 
 project.screens: plague.vscreen significance.vscreen
 
-admin.screens: coreFaculty.vscreen Correspondence.vscreen
+admin.screens: coreFaculty.vscreen Correspondence.vscreen smb-mathepi.vscreen smb-mathepi/private.vscreen
 
 mli.screens: rabies_cihr.vscreen rabies_R0.vscreen
 
