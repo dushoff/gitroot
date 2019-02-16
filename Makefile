@@ -11,7 +11,6 @@ current: target
 screen_session: Planning.screen Lab_meeting.screen notebook.screen linux_config.screen
 
 Planning.screen: Planning
-	- cd $< && $(MAKE) sync
 	cd $< && screen -t "$<" bash -cl "nvim" ##
 
 %.screen: %
