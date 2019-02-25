@@ -106,13 +106,13 @@ labPages:
 ## start.mk is what we're using. Other startmks deleted 2018 Oct 25 (Thu)
 ## git rm substart.mk subdir.mk ##
 Sources += start.mk
+Sources += clone.mk sub.mk up.mk
 %/Makefile:
 	echo "# $*" > $@
-	cat start.mk >> $@
+	cat clone.mk >> $@
 	cd $* && $(MAKE) Makefile
 
 ## Makefiles for repos?
-Sources += clone.mk sub.mk up.mk
 
 ######################################################################
 
