@@ -33,6 +33,8 @@ park.screens: contact_trace.sd bayes_antigen.vscreen generation_links.vscreen
 
 cygu.screens: WDBC-Codes.vscreen aphrc.vscreen
 
+champ.screens: ari_submission.vscreen FIDO.vscreen
+
 %.sd:
 	cd $* && screen -t $*
 
