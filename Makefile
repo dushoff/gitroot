@@ -93,6 +93,13 @@ labPages:
 
 ######################################################################
 
+## New repo
+#### add to friends.def or dushoff_repos.def (linked to makestuff)
+#### make <dirname.setup>
+#### (default is a cloned makestuff… requires thought)
+
+## make bio.setup
+
 ## Current setup makes something with a cloned makestuff (already)
 ## Good for containers, etc. 
 # talks.setup
