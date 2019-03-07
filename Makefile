@@ -31,7 +31,7 @@ mli.screens: rabies_cihr.vscreen rabies_R0.vscreen rabies_correlations.vscreen
 
 park.screens: contact_trace.sd bayes_antigen.vscreen generation_links.vscreen
 
-cygu.screens: WDBC-Codes.vscreen aphrc.vscreen
+cygu.screens: WDBC-Codes.vscreen aphrc.vscreen aphrc/wash.vscreen
 
 champ.screens: ari_submission.vscreen FIDO.vscreen ~/Dropbox/FIDO_box.vscreen
 
