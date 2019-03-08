@@ -18,6 +18,11 @@ Planning.screen: Planning
 
 ######################################################################
 
+## Config for here 
+
+vim_session: 
+	bash -cl "vi Makefile dushoff_repos.def friends.def"
+
 # other screens
 
 chyun.screens: mc_recency.vscreen
