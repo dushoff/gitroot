@@ -28,11 +28,13 @@ project.screens: plague.vscreen significance.vscreen
 
 admin.screens: coreFaculty.vscreen Correspondence.vscreen
 
-mli.screens: rabies_cihr.vscreen rabies_R0.vscreen
+mli.screens: rabies_cihr.vscreen rabies_R0.vscreen mc_recency.vscreen
 
 park.screens: contact_trace.sd bayes_antigen.vscreen generation_links.vscreen
 
 cygu.screens: WDBC-Codes.vscreen aphrc.vscreen
+
+web.screens: mac-theobio.github.io.vscreen
 
 %.sd:
 	cd $* && screen -t $*
