@@ -11,13 +11,17 @@ current: target
 screen_session: Planning.screen Lab_meeting.screen notebook.screen linux_config.screen
 
 Planning.screen: Planning
-	- cd $< && $(MAKE) sync
 	cd $< && screen -t "$<" bash -cl "nvim" ##
 
 %.screen: %
 	cd $< && screen -t "$<" bash -cl "vmt" ##
 
 ######################################################################
+
+## Config for here 
+
+vim_session: 
+	bash -cl "vi Makefile dushoff_repos.def friends.def"
 
 # other screens
 
@@ -26,13 +30,15 @@ chyun.screens: mc_recency.vscreen
 
 project.screens: plague.vscreen significance.vscreen
 
-admin.screens: coreFaculty.vscreen Correspondence.vscreen
+admin.screens: coreFaculty.vscreen Correspondence.vscreen smb-mathepi.vscreen smb-mathepi/private.vscreen
 
-mli.screens: rabies_cihr.vscreen rabies_R0.vscreen mc_recency.vscreen
+mli.screens: rabies_cihr.vscreen rabies_R0.vscreen rabies_correlations.vscreen mc_recency.vscreen
 
 park.screens: contact_trace.sd bayes_antigen.vscreen generation_links.vscreen
 
-cygu.screens: WDBC-Codes.vscreen aphrc.vscreen
+cygu.screens: WDBC-Codes.vscreen aphrc.vscreen aphrc/wash.vscreen
+
+champ.screens: ari_submission.vscreen FIDO.vscreen ~/Dropbox/FIDO_box.vscreen
 
 web.screens: mac-theobio.github.io.vscreen
 
@@ -94,6 +100,13 @@ labPages:
 
 ######################################################################
 
+## New repo
+#### add to friends.def or dushoff_repos.def (linked to makestuff)
+#### make <dirname.setup>
+#### (default is a cloned makestuff… requires thought)
+
+## make bio.setup
+
 ## Current setup makes something with a cloned makestuff (already)
 ## Good for containers, etc. 
 # talks.setup
@@ -109,13 +122,13 @@ labPages:
 ## start.mk is what we're using. Other startmks deleted 2018 Oct 25 (Thu)
 ## git rm substart.mk subdir.mk ##
 Sources += start.mk
+Sources += clone.mk sub.mk up.mk
 %/Makefile:
 	echo "# $*" > $@
-	cat start.mk >> $@
+	cat clone.mk >> $@
 	cd $* && $(MAKE) Makefile
 
 ## Makefiles for repos?
-Sources += clone.mk sub.mk up.mk
 
 ######################################################################
 
