@@ -8,7 +8,7 @@ current: target
 
 # default (gitroot) screen
 
-screen_session: Planning.screen Lab_meeting.screen notebook.screen linux_config.screen
+screen_session: Planning.screen Lab_meeting.screen dushoff.github.io.screen notebook.screen linux_config.screen
 
 Planning.screen: Planning
 	cd $< && screen -t "$<" bash -cl "nvim" ##
@@ -25,23 +25,13 @@ vim_session:
 
 # other screens
 
-chyun.screens: mc_recency.vscreen
-	cd fgc && screen -t fgc
-
-project.screens: plague.vscreen significance.vscreen
-
-admin.screens: coreFaculty.vscreen Correspondence.vscreen smb-mathepi.vscreen smb-mathepi/private.vscreen
-
-mli.screens: rabies_cihr.vscreen rabies_R0.vscreen rabies_correlations.vscreen
-
-park.screens: contact_trace.sd bayes_antigen.vscreen generation_links.vscreen
-
-cygu.screens: WDBC-Codes.vscreen aphrc.vscreen aphrc/wash.vscreen
-
-champ.screens: ari_submission.vscreen FIDO.vscreen ~/Dropbox/FIDO_box.vscreen
+Sources += screen.mk
+include screen.mk
 
 %.sd:
 	cd $* && screen -t $*
+
+######################################################################
 
 # stuff
 
