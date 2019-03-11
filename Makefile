@@ -8,7 +8,7 @@ current: target
 
 # default (gitroot) screen
 
-screen_session: Planning.screen Lab_meeting.screen notebook.screen linux_config.screen
+screen_session: Planning.screen Lab_meeting.screen dushoff.github.io.screen notebook.screen linux_config.screen
 
 Planning.screen: Planning
 	cd $< && screen -t "$<" bash -cl "nvim" ##
@@ -25,6 +25,8 @@ vim_session:
 
 # other screens
 
+Sources += screen.mk
+include screen.mk
 chyun.screens: mc_recency.vscreen
 	cd fgc && screen -t fgc
 
@@ -44,6 +46,8 @@ web.screens: mac-theobio.github.io.vscreen
 
 %.sd:
 	cd $* && screen -t $*
+
+######################################################################
 
 # stuff
 
