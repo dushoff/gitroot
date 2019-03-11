@@ -18,10 +18,31 @@ Planning.screen: Planning
 
 ######################################################################
 
+## Config for here 
+
+vim_session: 
+	bash -cl "vi Makefile dushoff_repos.def friends.def"
+
 # other screens
 
 Sources += screen.mk
 include screen.mk
+chyun.screens: mc_recency.vscreen
+	cd fgc && screen -t fgc
+
+project.screens: plague.vscreen significance.vscreen
+
+admin.screens: coreFaculty.vscreen Correspondence.vscreen smb-mathepi.vscreen smb-mathepi/private.vscreen
+
+mli.screens: rabies_cihr.vscreen rabies_R0.vscreen rabies_correlations.vscreen mc_recency.vscreen
+
+park.screens: contact_trace.sd bayes_antigen.vscreen generation_links.vscreen
+
+cygu.screens: WDBC-Codes.vscreen aphrc.vscreen aphrc/wash.vscreen
+
+champ.screens: ari_submission.vscreen FIDO.vscreen ~/Dropbox/FIDO_box.vscreen
+
+web.screens: mac-theobio.github.io.vscreen
 
 %.sd:
 	cd $* && screen -t $*
