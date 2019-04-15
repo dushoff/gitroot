@@ -101,7 +101,6 @@ labPages:
 %.setup:
 	$(MAKE) $*
 	$(MAKE) $*/Makefile
-	$(MAKE) $*/target.mk
 
 ## This is meant to override the clone setup
 %.sub: %
@@ -114,7 +113,7 @@ Sources += clone.mk sub.mk up.mk
 %/Makefile:
 	echo "# $*" > $@
 	cat clone.mk >> $@
-	cd $* && $(MAKE) Makefile
+	cd $* && $(MAKE) Makefile && $(MAKE) target.mk
 
 ## Makefiles for repos?
 
