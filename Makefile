@@ -93,7 +93,7 @@ labPages:
 #### make <dirname.setup>
 #### (default is a cloned makestuff… requires thought)
 
-## make bio.setup
+## make branches.setup ##
 
 ## Current setup makes something with a cloned makestuff (already)
 ## Good for containers, etc. 
