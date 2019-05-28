@@ -14,5 +14,8 @@ cygu.screens: WDBC-Codes.vscreen aphrc.vscreen
 
 champ.screens: ari_submission.vscreen FIDO.vscreen ~/Dropbox/FIDO_box.vscreen
 
+## ici3d-pkg
+ICI3D.screens: MMED.vscreen MMED/pages.vscreen RTutorials.vscreen
+
 ## web.screens: mac-theobio.github.io.vscreen notebook.vscreen
 
