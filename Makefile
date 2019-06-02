@@ -131,7 +131,9 @@ recreation:
 ######################################################################
 
 Ignore += $(repodirs)
-clonedirs +=  $(wildcard $(repodirs))
+
+## This is a pain. I need to reinvent hierarchy, too
+## clonedirs +=  $(wildcard $(repodirs))
 
 clonelist:
 	@echo $(clonedirs)
