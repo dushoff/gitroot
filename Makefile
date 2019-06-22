@@ -10,9 +10,6 @@ current: target
 
 screen_session: Planning.screen linux_config.screen Lab_meeting.screen dushoff.github.io.screen notebook.screen mac-theobio.github.io.screen
 
-Planning.screen: Planning
-	cd $< && screen -t "$<" bash -cl "nvim" ##
-
 %.screen: %
 	cd $< && screen -t "$<" bash -cl "vmt" ##
 
