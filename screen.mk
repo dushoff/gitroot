@@ -6,7 +6,7 @@ project.screens: plague.vscreen significance.vscreen
 
 admin.screens: coreFaculty.vscreen Correspondence.vscreen smb-mathepi.vscreen smb-mathepi/private.vscreen
 
-mli.screens: rabies_cihr.vscreen rabies_R0.vscreen rabies_correlations.vscreen
+mli.screens: rabies_cihr.vscreen rabies_R0.vscreen rabies_correlations.vscreen rdc.vscreen
 
 park.screens: contact_trace.sd bayes_antigen.vscreen generation_links.vscreen
 
