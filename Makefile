@@ -6,27 +6,27 @@ current: target
 
 ##################################################################
 
-# default (gitroot) screen
-
-screen_session: Planning.screen linux_config.screen Lab_meeting.screen dushoff.github.io.screen notebook.screen mac-theobio.github.io.screen
-
-%.screen: %
-	cd $< && screen -t "$<" bash -cl "vmt" ##
-
-######################################################################
-
-## Config for here 
-
 vim_session: 
 	bash -cl "vi Makefile dushoff_repos.def friends.def"
 
-# other screens
+######################################################################
 
+## Screen config
+
+## Main
+screen_session: Planning.vscreen linux_config.vscreen Lab_meeting.vscreen dushoff.github.io.vscreen notebook.vscreen mac-theobio.github.io.vscreen
+
+# others
 Sources += screen.mk
 include screen.mk
 
 %.sd:
 	cd $* && screen -t $*
+
+######################################################################
+
+## Needed (currently) to clone from repo lists
+clonecommand = justclone
 
 ######################################################################
 
@@ -67,21 +67,14 @@ Ignore += dev
 
 ######################################################################
 
-## Developing now in talks/
-## Should have clonedirs use justclone, and mdirs (bad name?) use subclone (bad name, and does not exist) … investigate
-
-## No idea what this is or whether I am using it.
-## Should clones start with makestuff.sub or makestuff.clone?
-## This is terrible; should move to git.mk as clone: and module:
-## or as clone= and module=
-clonecommand = justclone
-
-######################################################################
-
 ## things with special names
 repodirs += labPages
 labPages:
 	git clone https://github.com/mac-theobio/mac-theobio.github.io.git $@
+
+repodirs += oldTalks
+oldTalks:
+	git clone https://dushoff@bitbucket.org/dushoff/talks.git $@
 
 ######################################################################
 
@@ -90,7 +83,7 @@ labPages:
 #### make <dirname.setup>
 #### (default is a cloned makestuff… requires thought)
 
-## make branches.setup ##
+## make speedstrength.setup ##
 
 ## Current setup makes something with a cloned makestuff (already)
 ## Good for containers, etc. 
