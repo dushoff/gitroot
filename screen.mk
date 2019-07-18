@@ -17,3 +17,5 @@ champ.screens: ari_submission.vscreen FIDO.vscreen ~/Dropbox/FIDO_box.vscreen
 ## ici3d-pkg
 ICI3D.screens: MMED.vscreen MMED/pages.vscreen RTutorials.vscreen
 
+SACEMA.screens: branches/epidemicInsurance.vscreen branches/rubellaSA.vscreen
+
