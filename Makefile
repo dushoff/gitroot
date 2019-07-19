@@ -25,6 +25,16 @@ include screen.mk
 
 ######################################################################
 
+## Resting and activating
+
+rest = 708 speedstrength stuff
+rest: $(rest:%=resting/%)
+resting/%:
+	$(MAKE) $*.all
+	$(MV) $* $@
+
+######################################################################
+
 ## Needed (currently) to clone from repo lists
 clonecommand = justclone
 
