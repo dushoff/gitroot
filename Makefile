@@ -27,11 +27,17 @@ include screen.mk
 
 ## Resting and activating
 
-rest = 708 speedstrength stuff
+## This is insanity; it's making shit just to rest it
+
+rest = 708 stuff aphrc
 rest: $(rest:%=resting/%)
 resting/%:
+	$(MAKE) resting
 	$(MAKE) $*.all
 	$(MV) $* $@
+
+resting:
+	$(mkdir)
 
 ######################################################################
 
