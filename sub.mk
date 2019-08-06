@@ -26,8 +26,7 @@ $(ms)/Makefile:
 
 ######################################################################
 
-## This ¶ can be deleted once makestuff is set up, right? 2019 Jan 02 (Wed)
-## This particular build logic not tested yet
+## This ¶ can be deleted once makestuff is set up
 msrepo = https://github.com/dushoff
 $(ms)/Makefile: $(ms)
 $(ms):

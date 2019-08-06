@@ -88,10 +88,6 @@ repodirs += labPages
 labPages:
 	git clone https://github.com/mac-theobio/mac-theobio.github.io.git $@
 
-repodirs += oldTalks
-oldTalks:
-	git clone https://dushoff@bitbucket.org/dushoff/talks.git $@
-
 ######################################################################
 
 ## New repo
