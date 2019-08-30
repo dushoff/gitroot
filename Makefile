@@ -147,6 +147,7 @@ allupstream = $(alldirs:%=%.upstream)
 allupstream: $(allupstream)
 	@echo $^
 
+Ignore += repohome.list *.upstream
 repohome.list: $(allupstream) Makefile
 	$(MAKE) $(allupstream)
 	cat $(allupstream) > $@
