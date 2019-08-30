@@ -6,19 +6,18 @@ current: target
 
 ##################################################################
 
-vim_session: 
-	bash -cl "vi Makefile dushoff_repos.def friends.def"
+vim_session:
+	bash -cl "vi Makefile screen.mk"
 
 ######################################################################
 
 ## Screen config
 
 ## Main
-screen_session: Planning.vscreen linux_config.vscreen Lab_meeting.vscreen dushoff.github.io.vscreen notebook.vscreen mac-theobio.github.io.vscreen
+screen_session: gitroot.vscreen Lab_meeting.vscreen dushoff.github.io.vscreen notebook.vscreen mac-theobio.github.io.vscreen
 
-# others
-Sources += screen.mk
-include screen.mk
+gitroot: dir=../
+gitroot: ; $(linkdir)
 
 %.sd:
 	cd $* && screen -t $*
