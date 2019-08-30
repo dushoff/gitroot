@@ -134,11 +134,25 @@ recreation:
 Ignore += $(repodirs)
 
 ## This is a pain. I need to reinvent hierarchy, too
-alldirs += makestuff
+## alldirs += makestuff
 alldirs +=  $(wildcard $(repodirs))
 
 clonelist:
 	@echo $(clonedirs)
+
+## This was way harder than it should have been and I don't know why
+## Check allupstream: WTF?
+allupstream = $(alldirs:%=%.upstream)
+allupstream: $(allupstream)
+	@echo $^
+
+Ignore += repohome.list *.upstream
+repohome.list: $(allupstream) Makefile
+	$(MAKE) $(allupstream)
+	cat $(allupstream) > $@
+
+%.upstream:
+	( cd $* && git remote get-url origin ) > $@
 
 ######################################################################
 
@@ -152,4 +166,5 @@ clonelist:
 -include $(ms)/visual.mk
 
 # -include $(ms)/wrapR.mk
+
 
